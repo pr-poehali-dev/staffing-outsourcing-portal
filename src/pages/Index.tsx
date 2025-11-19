@@ -21,9 +21,11 @@ const Index = () => {
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-border z-50">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Icon name="Users" size={32} className="text-primary" />
-              <span className="text-2xl font-bold text-secondary">HR Solutions</span>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+                <span className="text-white font-bold text-xl">А</span>
+              </div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Алимакс</span>
             </div>
             <div className="hidden md:flex items-center gap-6">
               <button onClick={() => scrollToSection('home')} className="text-sm font-medium hover:text-primary transition-colors">Главная</button>
@@ -38,52 +40,64 @@ const Index = () => {
         </div>
       </header>
 
-      <section id="home" className="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-white">
-        <div className="container mx-auto px-4">
+      <section id="home" className="pt-32 pb-20 bg-gradient-to-br from-purple-50 via-white to-blue-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] pointer-events-none"></div>
+        <div className="container mx-auto px-4 relative">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold text-secondary leading-tight">
+            <div className="space-y-8 animate-fade-in">
+              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold text-sm">
+                Лидер рынка HR-услуг
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent leading-tight">
                 Профессиональный аутсорсинг персонала
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="text-xl text-muted-foreground leading-relaxed">
                 Комплексные решения по подбору и управлению линейным персоналом для вашего бизнеса
               </p>
               <div className="flex gap-4">
-                <Button size="lg" onClick={() => scrollToSection('contacts')}>
+                <Button size="lg" className="rounded-xl shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all" onClick={() => scrollToSection('contacts')}>
                   Оставить заявку
                 </Button>
-                <Button size="lg" variant="outline" onClick={() => scrollToSection('services')}>
+                <Button size="lg" variant="outline" className="rounded-xl" onClick={() => scrollToSection('services')}>
                   Наши услуги
                 </Button>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4 animate-scale-in">
-              <Card className="hover:shadow-lg transition-shadow">
+            <div className="grid grid-cols-2 gap-6 animate-scale-in">
+              <Card className="hover:shadow-xl hover:shadow-primary/10 transition-all hover:-translate-y-1 border-2 rounded-2xl">
                 <CardHeader>
-                  <Icon name="TrendingUp" size={40} className="text-primary mb-2" />
-                  <CardTitle className="text-3xl">500+</CardTitle>
-                  <CardDescription>Клиентов</CardDescription>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                    <Icon name="TrendingUp" size={24} className="text-primary" />
+                  </div>
+                  <CardTitle className="text-4xl font-bold">500+</CardTitle>
+                  <CardDescription className="text-base">Клиентов</CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-xl hover:shadow-primary/10 transition-all hover:-translate-y-1 border-2 rounded-2xl">
                 <CardHeader>
-                  <Icon name="Users" size={40} className="text-primary mb-2" />
-                  <CardTitle className="text-3xl">15000+</CardTitle>
-                  <CardDescription>Трудоустроенных</CardDescription>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                    <Icon name="Users" size={24} className="text-primary" />
+                  </div>
+                  <CardTitle className="text-4xl font-bold">15000+</CardTitle>
+                  <CardDescription className="text-base">Трудоустроенных</CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-xl hover:shadow-primary/10 transition-all hover:-translate-y-1 border-2 rounded-2xl">
                 <CardHeader>
-                  <Icon name="Award" size={40} className="text-primary mb-2" />
-                  <CardTitle className="text-3xl">12</CardTitle>
-                  <CardDescription>Лет на рынке</CardDescription>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                    <Icon name="Award" size={24} className="text-primary" />
+                  </div>
+                  <CardTitle className="text-4xl font-bold">12</CardTitle>
+                  <CardDescription className="text-base">Лет на рынке</CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="hover:shadow-lg transition-shadow">
+              <Card className="hover:shadow-xl hover:shadow-primary/10 transition-all hover:-translate-y-1 border-2 rounded-2xl">
                 <CardHeader>
-                  <Icon name="MapPin" size={40} className="text-primary mb-2" />
-                  <CardTitle className="text-3xl">25</CardTitle>
-                  <CardDescription>Городов России</CardDescription>
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                    <Icon name="MapPin" size={24} className="text-primary" />
+                  </div>
+                  <CardTitle className="text-4xl font-bold">25</CardTitle>
+                  <CardDescription className="text-base">Городов России</CardDescription>
                 </CardHeader>
               </Card>
             </div>
@@ -91,19 +105,24 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-secondary mb-4">Наши услуги</h2>
+          <div className="text-center mb-20">
+            <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold text-sm mb-4">
+              Услуги
+            </div>
+            <h2 className="text-5xl font-bold mb-6">Наши услуги</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Полный спектр HR-решений для эффективного управления персоналом
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-2 hover:border-primary transition-all hover:shadow-xl">
+            <Card className="border-2 hover:border-primary transition-all hover:shadow-xl hover:-translate-y-2 rounded-2xl group">
               <CardHeader>
-                <Icon name="UserPlus" size={48} className="text-primary mb-4" />
-                <CardTitle className="text-2xl">Подбор персонала</CardTitle>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="UserPlus" size={32} className="text-white" />
+                </div>
+                <CardTitle className="text-2xl mb-2">Подбор персонала</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
@@ -127,10 +146,12 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-primary transition-all hover:shadow-xl">
+            <Card className="border-2 hover:border-primary transition-all hover:shadow-xl hover:-translate-y-2 rounded-2xl group">
               <CardHeader>
-                <Icon name="Briefcase" size={48} className="text-primary mb-4" />
-                <CardTitle className="text-2xl">Аутстаффинг</CardTitle>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Briefcase" size={32} className="text-white" />
+                </div>
+                <CardTitle className="text-2xl mb-2">Аутстаффинг</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
@@ -154,10 +175,12 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:border-primary transition-all hover:shadow-xl">
+            <Card className="border-2 hover:border-primary transition-all hover:shadow-xl hover:-translate-y-2 rounded-2xl group">
               <CardHeader>
-                <Icon name="Settings" size={48} className="text-primary mb-4" />
-                <CardTitle className="text-2xl">HR-консалтинг</CardTitle>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Icon name="Settings" size={32} className="text-white" />
+                </div>
+                <CardTitle className="text-2xl mb-2">HR-консалтинг</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
@@ -184,14 +207,18 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section id="about" className="py-24 bg-gradient-to-br from-purple-50 via-blue-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.6),white)] pointer-events-none"></div>
+        <div className="container mx-auto px-4 relative">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-secondary mb-6">О компании</h2>
-              <div className="space-y-4 text-muted-foreground text-lg">
+              <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-primary font-semibold text-sm mb-4">
+                О нас
+              </div>
+              <h2 className="text-5xl font-bold mb-8">О компании</h2>
+              <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
                 <p>
-                  HR Solutions — лидер рынка аутсорсинга линейного персонала с 12-летним опытом работы. Мы помогаем бизнесу экономить время и ресурсы, обеспечивая качественный подбор и управление персоналом.
+                  <span className="font-semibold text-foreground">Алимакс</span> — лидер рынка аутсорсинга линейного персонала с 12-летним опытом работы. Мы помогаем бизнесу экономить время и ресурсы, обеспечивая качественный подбор и управление персоналом.
                 </p>
                 <p>
                   Наша команда профессионалов работает в 25 городах России, обслуживая более 500 компаний различных отраслей: ритейл, логистика, производство, HoReCa и другие.
@@ -203,19 +230,23 @@ const Index = () => {
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
-                <Card className="bg-primary text-white">
+                <Card className="bg-gradient-to-br from-primary to-purple-600 text-white border-0 rounded-2xl hover:shadow-xl transition-all">
                   <CardHeader>
-                    <Icon name="Target" size={40} className="mb-2" />
-                    <CardTitle>Миссия</CardTitle>
-                    <CardDescription className="text-blue-100">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center mb-3">
+                      <Icon name="Target" size={24} />
+                    </div>
+                    <CardTitle className="text-xl">Миссия</CardTitle>
+                    <CardDescription className="text-white/90">
                       Создавать эффективные HR-решения для роста бизнеса клиентов
                     </CardDescription>
                   </CardHeader>
                 </Card>
-                <Card>
+                <Card className="rounded-2xl border-2 hover:shadow-xl transition-all">
                   <CardHeader>
-                    <Icon name="Shield" size={40} className="text-primary mb-2" />
-                    <CardTitle>Надежность</CardTitle>
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                      <Icon name="Shield" size={24} className="text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">Надежность</CardTitle>
                     <CardDescription>
                       Полное юридическое сопровождение и страхование рисков
                     </CardDescription>
@@ -223,20 +254,24 @@ const Index = () => {
                 </Card>
               </div>
               <div className="space-y-6 pt-12">
-                <Card>
+                <Card className="rounded-2xl border-2 hover:shadow-xl transition-all">
                   <CardHeader>
-                    <Icon name="Zap" size={40} className="text-primary mb-2" />
-                    <CardTitle>Скорость</CardTitle>
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-3">
+                      <Icon name="Zap" size={24} className="text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">Скорость</CardTitle>
                     <CardDescription>
                       Закрытие вакансий от 24 часов
                     </CardDescription>
                   </CardHeader>
                 </Card>
-                <Card className="bg-secondary text-white">
+                <Card className="bg-gradient-to-br from-foreground to-foreground/90 text-white border-0 rounded-2xl hover:shadow-xl transition-all">
                   <CardHeader>
-                    <Icon name="Heart" size={40} className="mb-2" />
-                    <CardTitle>Ценности</CardTitle>
-                    <CardDescription className="text-gray-300">
+                    <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center mb-3">
+                      <Icon name="Heart" size={24} />
+                    </div>
+                    <CardTitle className="text-xl">Ценности</CardTitle>
+                    <CardDescription className="text-white/90">
                       Профессионализм, честность и партнерство
                     </CardDescription>
                   </CardHeader>
@@ -625,51 +660,53 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-secondary text-white py-12">
+      <footer className="bg-gradient-to-br from-foreground to-foreground/95 text-white py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Icon name="Users" size={28} />
-                <span className="text-xl font-bold">HR Solutions</span>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">А</span>
+                </div>
+                <span className="text-2xl font-bold">Алимакс</span>
               </div>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-white/70 leading-relaxed">
                 Профессиональный аутсорсинг персонала по всей России
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Услуги</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>Подбор персонала</li>
-                <li>Аутстаффинг</li>
-                <li>HR-консалтинг</li>
-                <li>Кадровое делопроизводство</li>
+              <h4 className="font-semibold mb-4 text-lg">Услуги</h4>
+              <ul className="space-y-3 text-sm text-white/70">
+                <li className="hover:text-white transition-colors cursor-pointer">Подбор персонала</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Аутстаффинг</li>
+                <li className="hover:text-white transition-colors cursor-pointer">HR-консалтинг</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Кадровое делопроизводство</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Компания</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>О нас</li>
-                <li>Вакансии</li>
-                <li>Контакты</li>
-                <li>Партнерам</li>
+              <h4 className="font-semibold mb-4 text-lg">Компания</h4>
+              <ul className="space-y-3 text-sm text-white/70">
+                <li className="hover:text-white transition-colors cursor-pointer">О нас</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Вакансии</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Контакты</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Партнерам</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4">Документы</h4>
-              <ul className="space-y-2 text-sm text-gray-300">
-                <li>Политика конфиденциальности</li>
-                <li>Пользовательское соглашение</li>
-                <li>Реквизиты</li>
+              <h4 className="font-semibold mb-4 text-lg">Документы</h4>
+              <ul className="space-y-3 text-sm text-white/70">
+                <li className="hover:text-white transition-colors cursor-pointer">Политика конфиденциальности</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Пользовательское соглашение</li>
+                <li className="hover:text-white transition-colors cursor-pointer">Реквизиты</li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-600 pt-8 text-center text-sm text-gray-300">
-            <p>© 2024 HR Solutions. Все права защищены.</p>
+          <div className="border-t border-white/10 pt-8 text-center text-sm text-white/60">
+            <p>© 2024 Алимакс. Все права защищены.</p>
           </div>
         </div>
       </footer>
